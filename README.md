@@ -1,9 +1,9 @@
-# al-folio
+My personal webpage ([link](https://WaterHyacinthInNANHU.github.io)). 
 
-my website based on [al-folio](https://github.com/alshedivat/al-folio)
+Powered by [al-folio](https://github.com/alshedivat/al-folio)
 
-My website is accessible in [here](https://cnut1648.github.io/).
-Use the following command to build
+Acknowledge: [cnut1648.github.io](https://github.com/cnut1648/cnut1648.github.io)
+
 ```shell
 bundle install
 bundle exec jekyll server
