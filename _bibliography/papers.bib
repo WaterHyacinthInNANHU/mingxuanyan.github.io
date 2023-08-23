@@ -2,78 +2,40 @@
 ---
 
 @article{chan2021salkg,
-  abbr={NeurIPS},
-  title={SalKG: Learning From Knowledge Graph Explanations for Commonsense Reasoning},
-  author={Chan, Aaron and Xu, Jiashu and Long, Boyuan and Sanyal, Soumya and Gupta, Tanishq and Ren, Xiang},
-  journal={Advances in Neural Information Processing Systems (NeurIPS),},
-  pdf={https://proceedings.neurips.cc/paper/2021/file/9752d873fa71c19dc602bf2a0696f9b5-Paper.pdf},
-  arxiv={2104.08793},
-  abstract={Augmenting pre-trained language models with knowledge graphs (KGs) has achieved success on various commonsense reasoning tasks. However, for a given task instance, the KG, or certain parts of the KG, may not be useful. Although KG-augmented models often use attention to focus on specific KG components, the KG is still always used, and the attention mechanism is never explicitly taught which KG components should be used. Meanwhile, saliency methods can measure how much a KG feature (e.g., graph, node, path) influences the model to make the correct prediction, thus explaining which KG features are useful. This paper explores how saliency explanations can be used to improve KG-augmented models' performance. First, we propose to create coarse (Is the KG useful?) and fine (Which nodes/paths in the KG are useful?) saliency explanations. Second, to motivate saliency-based supervision, we analyze oracle KG-augmented models which directly use saliency explanations as extra inputs for guiding their attention. Third, we propose SalKG, a framework for KG-augmented models to learn from coarse and/or fine saliency explanations. Given saliency explanations created from a task's training set, SalKG jointly trains the model to predict the explanations, then solve the task by attending to KG features highlighted by the predicted explanations. On three commonsense QA benchmarks (CSQA, OBQA, CODAH) and a range of KG-augmented models, we show that SalKG can yield considerable performance gains -- up to 2.76% absolute improvement on CSQA.},
-  code={https://github.com/INK-USC/SalKG},
-  year={2021},
+  abbr={MM'23},
+  title={Think before You Leap: Content-Aware Low-Cost Edge-Assisted Video Semantic Segmentation},
+  author={Yan, Mingxuan and Yi, Wang and Xuedou, Xiao and Zhiqing, Luo and Jianhua, He and Wei Wang},
+  journal={Proceedings of the ACM International Conference on Multimedia (MM)},
+  year={2023},
+  doi={10.1145/3581783.3613808},
+  html={https://doi.org/10.1145/3581783.3613808},
+  pdf={Penance.pdf},
+  dimensions={true},
   selected={true},
-  preview={salkg.png}
 }
 
 @article{ma2021dss,
-  abbr={NPJ Digit Med},
-  title={Dissection Gesture Sequence during Nerve Sparing Predicts Erectile Function Recovery after Robot-Assisted Radical Prostatectomy},
-  author={Ma, Runzhuo and Xu, Jiashu and Rodriguez, Ivan and DeMeo, Gina and Desai, Aditya and Trinh, Loc and Nguyen, H., Jessica and Anandkumar, Anima and Hu, C., Jim and Hung, J., Andrew},
-  journal={NPJ Digit Medicine},
-  html={/files/Dissection_Gesture_Abstract_v6.pdf},
-  year={2022},
-  selected={false},
+  abbr={INFOCOM'23},
+  title={From {Ember} to {Blaze}: {Swift} {Interactive} {Video} {Adaptation} via {Meta}-{Reinforcement} {Learning}},
+  author={Xiao*, Xuedou and Yan*, Mingxuan and Zuo, Yingying and Liu, Boxi and Ruan, Paul and Cao, Yang and Wang, Wei},
+  year={2023},
+  journal={Proceedings of the IEEE International Conference on Computer Communications (INFOCOM)},
+  html={https://arxiv.org/abs/2301.05541},
+  pdf={Fiammetta.pdf},
+  dimensions={true},
+  selected={true},
 }
 
 
-@article{ma2021dart,
-  abbr={AUA},
-  title={Dissection Assessment for Robotic Technique (DART) to Evaluate Nerve-Spare of Robot-Assisted Radical Prostatectomy},
-  author={Ma, Runzhuo and Hui, Alvin and Xu, Jiashu and Desai, Aditya and Tzeng, Michael and Cheng, Emily and Trinh, Loc and Nguyen, H., Jessica and Anandkumar, Anima and Hu, C., Jim and Hung, J., Andrew},
-  journal={American Urological Association Annual Conference (AUA),},
-  html={/files/DART_v5.pdf},
-  pdf={https://www.auajournals.org/doi/10.1097/JU.0000000000002607.01},
-  year={2022},
-  selected={false},
-}
-
-@inproceedings{huang-etal-2022-unified,
-    title = {Unified Semantic Typing with Meaningful Label Inference},
-    author = {Huang, James Y. and Li*, Bangzheng and Xu*, Jiashu and Chen, Muhao},
-    booktitle = {Proceedings of the Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)},
-    year = {2022},
-    abbr={NAACL},
-    preview={unist.jpg},
-    arxiv={2205.01826},
-    pdf={https://aclanthology.org/2022.naacl-main.190.pdf},
-    abstract={Semantic typing aims at classifying tokens or spans of interest in a textual context into semantic categories such as relations, entity types, and event types. The inferred labels of semantic categories meaningfully interpret how machines understand components of text. In this paper, we present UniST, a unified framework for semantic typing that captures label semantics by projecting both inputs and labels into a joint semantic embedding space. To formulate different lexical and relational semantic typing tasks as a unified task, we incorporate task descriptions to be jointly encoded with the input, allowing UniST to be adapted to different tasks without introducing task-specific model components. UniST optimizes a margin ranking loss such that the semantic relatedness of the input and labels is reflected from their embedding similarity. Our experiments demonstrate that UniST achieves strong performance across three semantic typing tasks: entity typing, relation classification and event typing. Meanwhile, UniST effectively transfers semantic knowledge of labels and substantially improves generalizability on inferring rarely seen and unseen types. In addition, multiple semantic typing tasks can be jointly trained within the unified framework, leading to a single compact multi-tasking model that performs comparably to dedicated single-task models, while offering even better transferability.},
-    selected = {true},
-}
-
-@COMMENT{ge2022dall,
-  abbr={Arxiv},
-  title={Dall-e for detection: Language-driven context image synthesis for object detection},
-  author={Ge, Yunhao and Xu, Jiashu and Zhao, Brian Nlong and Itti, Laurent and Vineet, Vibhav},
-  journal={arXiv preprint},
-  arxiv={2206.09592},
-  year={2022}
-}
-
-@inproceedings{ge2022neural,
-  title={Neural-Sim: Learning to Generate Training Data with NeRF},
-  author={Ge, Yunhao and Behl*, Harkirat and Xu*, Jiashu and Gunasekar, Suriya and Joshi, Neel and Song, Yale and Wang, Xin and Itti, Laurent and Vineet, Vibhav},
-  booktitle={European Conference on Computer Vision (ECCV)},
-  abbr={ECCV2022},
-  pdf={https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136830463.pdf},
-  arxiv={2207.11368},
-  year={2022}
-}
-
-@article{xu2022can,
-  abbr={Arxiv},
-  title={Can NLI Provide Proper Indirect Supervision for Low-resource Biomedical Relation Extraction?},
-  author={Xu, Jiashu and Ma, Mingyu Derek and Chen, Muhao},
-  journal={arXiv preprint},
-  arxiv={2212.10784},
-  year={2022}
+@article{luo2023non,
+  abbr={IMWUT'23},
+  title={Non-intrusive Anomaly Detection of Industrial Robot Operations by Exploiting Nonlinear Effect},
+  author={Luo, Zhiqing and Yan, Mingxuan and Wang, Wei and Zhang, Qian},
+  year={2023},
+  journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT)},
+  doi={10.1145/3569477},
+  html={https://dl.acm.org/doi/abs/10.1145/3569477},
+  pdf={RobotScatter.pdf},
+  dimensions={true},
+  selected={false}
 }

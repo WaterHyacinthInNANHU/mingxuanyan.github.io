@@ -1,6 +1,6 @@
 ---
 layout: cv
-permalink: /files/jiashuxu_CV_current.pdf
+permalink: 
 title: CV
 nav: true
 ---
