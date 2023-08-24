@@ -8,7 +8,11 @@ profile:
   align: right
   image_cicular: false # crops the image to make it circular
   image: profile.jpg
-  address: >
+  address: > 
+    <p style="font-size:10px;" align="center">
+      La Jolla, San Diego, CA
+    </p>
+
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -26,9 +30,9 @@ social: true  # includes social icons at the bottom of the page
 
 ### About Me
 
-Hi! I am Mingxuan Yan, currently a graduate student in School of Electronic Information and Communications (EIC),  [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
+Hi there! I am Mingxuan Yan, a graduate student in the School of Electronic Information and Communications (EIC), [Huazhong University of Science and Technology](http://english.hust.edu.cn/) under the supervision of Prof.[Wei Wang](http://eic.hust.edu.cn/professor/wangwei/index.html). Before that, I obtained my bachelor's degree in [Wuhan University of Technology](http://english.whut.edu.cn/).
 
-You can reach me through [mingxuanyan99@outlook.com](mailto:mingxuanyan99@outlook.com)
+You are welcome to reach me through [mingxuanyan99@outlook.com](mailto:mingxuanyan99@outlook.com)
 
 ### Research Interests
 
