@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented our work ''From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning'' orally in person in **New York area**.🛫🌍🗽
+**Oral presentation** on our work ''From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning'' in **New York area**.🛫🌍🗽
