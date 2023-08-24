@@ -10,7 +10,7 @@ profile:
   image: profile.jpg
   address: > 
     <p style="font-size:10px;" align="center">
-      La Jolla, San Diego, CA
+      Me at La Jolla, San Diego, CA
     </p>
 
 
