@@ -10,7 +10,7 @@ Maximizing **quality of experience (QoE)** for **interactive video streaming** h
 
 In this essay, I will introduce our project ***Fiammetta***, a **meta-reinforcement-learning (Meta-RL) based congestion control algorithm** that aims to tackle the above challenge. To begin with, we performed a large-scale measurement on the interactive video service of ***Tencent WeCom*** to study real-world network fluctuations. Surprisingly, our analysis shows that, compared to time-varying network metrics, **network statistics exhibit noticeable short-term continuity**, which offers opportunities for few-shot learning methods such as meta-learning. Building on short-term continuity, *Fiammetta* accumulates learning experiences through offline meta-training and enables fast online adaptation to changing network states through a few gradient updates. The results show that *Fiammetta* outperforms existing algorithms significantly, i**mproving video bitrate by 3.6%-16.2% without increasing stalling rate**. 
 
-The related paper I co-authored: *"From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning"* will be published at **INFOCOM'23** in this May.
+The related [paper](https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf) I co-authored: *"From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning"* will be published at **INFOCOM'23** in this May.
 
 ## 2. Real-time Interactive Video Communication
 
@@ -81,8 +81,9 @@ The goal of *the meta-training* phase is to obtain an initial model as a good st
 	Meta-testing
 </center> 
 </div>
-
 In the *meta-testing* phase, the initial model adapts quickly to new tasks and generates a **specialized sub-model** with just a few gradient descents. It first **identifies the appearance of new tasks.** Once detected, it will activate meta-testing. Specifically, it generates network traces within the detected new task and updates the initial model to produce the sub-model accommodated to the new task, following the standard reinforcement learning pipeline. 
+
+For the detailed design of *Fiammetta*, please refer to our [paper](https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf).
 
 ### 4.2 Feasibility Study
 
@@ -97,8 +98,6 @@ To investigate the characteristics of real-world network traces, we conduct a me
 We first demonstrate how the instant bandwidth evolves during a time period of 1s and 4s (subfigure (a)). We can see that the bandwidth fluctuates drastically and is highly unpredictable. However, if we apply a sliding window on the traces and analyze their statistics, we notice that there exists **short-term continuity** in the statistics (subfigure (b)-(d)). For example, during a period of 4 seconds, both the mean and standard deviation vary less than 200 kbps in 90% of the cases. 
 
 We name the continuations as *network states*, which is the basic unit of our adaptation algorithm. The short-term continuity provides opportunities for meta-learning, where **Meta-RL has the potential to keep up with the change of network states.** 
-
-For the detailed design of *Fiammetta*, please refer to our [paper](https://github.com/WaterHyacinthInNANHU/WaterHyacinthInNANHU.github.io/blob/master/assets/pdf/Fiammetta.pdf).
 
 ## 7. Performances
 
