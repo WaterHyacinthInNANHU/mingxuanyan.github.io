@@ -1,7 +1,5 @@
 # *Fiammetta*: Meta-RL Powered Congestion Control
 
-## Table of Contents
-
 [TOC]
 
 ## 1. Introduction
@@ -27,6 +25,8 @@ How can we **adapt the bitrate** of an interactive video streaming system to **v
 
 ## 3. Existing Efforts
 
+### 3.1 Rule Based Solutions
+
 **Congestion control (CC)** algorithms are developed to adapt video-sending bitrate according to the estimated network capacity (bandwidth). The core part of CC is to model the network link and bandwidth estimation. Existing efforts could be categorized into **rule-based CC** and **learning-based CC**.
 
 Rule-based CC algorithms such as ***GCC***[^2] and *BBR*[^3]. They typically follow AIMD (additive-increase/multiplicative-decrease) / MIMD (multiplicative-increase/multiplicative-decrease)-like approaches that require a **probing phase** to converge sending bitrate to bandwidth. For instance, *GCC* iteratively estimates *bandwidth* and *one-way queuing delay* with a linear *Kalman Filter* (implemented in the "Arrival filter" in the following diagram), which assumes a static zero-mean Gaussian noise model.
@@ -44,6 +44,8 @@ The drawbacks of this paradigm are two-fold:
 1. The application-layer video codec and transport-layer protocols are uncoordinated[^4]. The bursty application-layer codec bitrate pattern (i.e., intermittent frame-by-frame delivery) often **misleads the transport-layer’s network capacity estimation**.
 2. The probing phase suffers a slow convergence, leading to a **low bandwidth utilization**. Frequent **change of the network state** (handover in wireless networks, for instance) worsen the matter as the bottleneck link capacity and propagation delay change too fast for the prober to catch up.
 
+### 3.2 Learning Based Solutions
+
 To tackle the first problem, learning-based congestion control[^4] has been proposed. They replace the rule-based congestion control algorithms with **deep reinforcement learning (DRL)** models. However, they still suffer from the second problem imposed by fixed **offline-learned** neuron network parameters. 
 
 Recent studies[^5][^6] investigate the paradigm of **online learning**. Specifically, they fine-tune the offline learned model online with transfer learning to adapt to unseen network conditions. Nevertheless, they require a large amount of data/time for transfer learning, which hinders fast adaptation to new network states. 
@@ -56,7 +58,7 @@ The model trained offline may perform poorly in the middle two unseen states. Wi
 
 ## 4. Our Solution - Fiammetta
 
-### 4.1 Overview
+### 4.1 The Big Picture
 
 We resort to recent advances in few-shot adaptation methods such as **meta-learning**, more specifically, **meta reinforcement learning (Meta-RL)**, as no optimal bitrate is available in the training phase. This idea leads us to ***Fiammetta***, a Meta-Reinforcement-Learning-based bitrate adaptation algorithm for interactive video systems.
 
@@ -83,8 +85,6 @@ The goal of *the meta-training* phase is to obtain an initial model as a good st
 </div>
 In the *meta-testing* phase, the initial model adapts quickly to new tasks and generates a **specialized sub-model** with just a few gradient descents. It first **identifies the appearance of new tasks.** Once detected, it will activate meta-testing. Specifically, it generates network traces within the detected new task and updates the initial model to produce the sub-model accommodated to the new task, following the standard reinforcement learning pipeline. 
 
-For the detailed design of *Fiammetta*, please refer to our [paper](https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf).
-
 ### 4.2 Feasibility Study
 
 Despite the potential of Meta-RL, one question remains: **Is meta-learning fast enough to adapt?** Typically, the adaptation process of meta-learning algorithms still requires several steps of gradient descent, which consumes 1 or 2 seconds on our server. Thus, we must first know how fast the real-world network state changes.
@@ -98,6 +98,27 @@ To investigate the characteristics of real-world network traces, we conduct a me
 We first demonstrate how the instant bandwidth evolves during a time period of 1s and 4s (subfigure (a)). We can see that the bandwidth fluctuates drastically and is highly unpredictable. However, if we apply a sliding window on the traces and analyze their statistics, we notice that there exists **short-term continuity** in the statistics (subfigure (b)-(d)). For example, during a period of 4 seconds, both the mean and standard deviation vary less than 200 kbps in 90% of the cases. 
 
 We name the continuations as *network states*, which is the basic unit of our adaptation algorithm. The short-term continuity provides opportunities for meta-learning, where **Meta-RL has the potential to keep up with the change of network states.** 
+
+### 4.3 Training Tricks
+
+#### Action Space Design
+
+In previous works[^5][^6], the policy directly outputs the absolute bitrate. However, through our experiments, this approach performs poorly given Phighly dynamic bandwidth. In response, we let the policy output the **magnification**, i.e., $\frac{b_t}{b_{t-1}}$. The reasons are two-fold:
+
+1. While **Packet delay** and **delay jitter** are more informative for reflecting network link congestions than absolute throughput in policy's state space, they are closely correlated with the **relative changes** of sending rate $b$.
+2. Adopting magnification enables a more flexible control while **decreasing the dimension of action space**.
+
+#### Policy Pretraining with Emulator
+
+Ideally, reinforcement learning requires the policy to directly learn from the **real-world environment.** However, the sampling process of the testbed is too slow - only 10 samples(steps) per second. As such, 1 million steps consumes ~28 hours. In response, we build a emulator that can simulate packet-level network traffic (based on [simple_emulator](https://github.com/AItransCompetition/simple_emulator)) which boosts the training process by ~50x. 
+
+The main difference between the emulator and testbed is the codec's behavior. To mitigate this sim-to-real problem, we then transfer the policy on the testbed for another 1 million steps.  As the best hyper-parameters have been found during the emulator phase, this step is typically performed only once.
+
+#### Safeguard
+
+We adopt a hand-craft safeguard to prevent the policy from getting stuck in extreme cases (seconds of delay or extremely low sending rate) due to its imperfection. The safeguard greatly **accelerates the training process**. Throughout the training, the policy typically becomes progressively less random, and the safeguard is activated less and less.
+
+> For the detailed design of *Fiammetta*, please refer to our [paper](https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf).
 
 ## 7. Performances
 
@@ -117,11 +138,11 @@ We further investigate its performance under different network conditions. The r
 
 ## 8. What's Next?
 
-**Fairness Concern**
+### Fairness Concern
 
 In this work, we considered a simplified scenario where *Fiammetta* operates alone in the network link. In real-world deployment, **fairness (receiving a no larger share of the network than other flows)** against TCP connections and other video sessions is essential to a good CC algorithm.
 
-**Computational Overhead**
+### Computational Overhead
 
 In our framework, the computation of *Fiammetta* is offloaded to an RL server following the practice of previous works [^5]. However, our collaborators in Tencent suggested that a more efficient and mobile-friendly algorithm is preferred. A potential solution is integrating **low-cost rule-based algorithms with high-performance learning-based algorithms** [^7] . We may delve into it in our future works.
 
