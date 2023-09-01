@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
@@ -205,476 +205,390 @@ mark .md-meta { color: rgb(0, 0, 0); }
 mjx-container { break-inside: avoid; }
 
 
-@include-when-export url(https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
-@include-when-export url(https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext);
-
 :root {
-	--control-text-color: #777;
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
 }
 
-/**
- * forked from pixyll.com
- * MIT license
- */
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
-h1,
-.h1,
-.f1 {
-	font-size: 2rem;
-	line-height: 2.5rem;
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
 }
-h2,
-.h2,
-.f2 {
-	font-size: 1.5rem;
-	line-height: 2rem;
-}
-h3,
-.h3,
-.f3 {
-	font-size: 1.25rem;
-	line-height: 1.5rem;
-}
-p,
-.p,
-.f4,
-h4,
-h5,
-h6,
-dl,
-ol,
-ul,
-pre[cid],
-div[cid],
-#typora-source {
-	font-size: 1.125rem;
-	line-height: 1.5rem;
-}
-
-h4 {
-	font-size: 1.13rem;
-}
-/*
- Pixyll
- A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
- Best served with BASSCSS (http://jxnblk.github.io/basscss)
- Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
-
-*/
 
 body {
-	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", 'Segoe UI Emoji', Serif;
-	line-height: 1.5rem;
-	font-weight: 400;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
 }
 
 #write {
-	max-width: 914px;
-	color: #333;
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
 }
 
 @media only screen and (min-width: 1400px) {
 	#write {
-		max-width: 1100px;
+		max-width: 1024px;
 	}
 }
 
-@media only screen and (min-width: 1700px) {
+@media only screen and (min-width: 1800px) {
 	#write {
 		max-width: 1200px;
 	}
 }
 
-img {
-	width: auto;
-	max-width: 100%;
-}
-body {
-	font-size: 1.5rem;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
 }
 
-.ty-table-edit {
-	background: #ededed;
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
 }
 
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
 table {
-	width: 100%;
-	font-size: 1.125rem;
+    padding: 0;
+    word-break: initial;
 }
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td,
-table > tfoot > tr > th,
-table > tfoot > tr > td {
-	padding: 12px;
-	line-height: 1.2;
-	vertical-align: top;
-	border-top: 1px solid #333;
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
 }
-table > thead > tr > th {
-	vertical-align: bottom;
-	border-bottom: 2px solid #333;
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
 }
-table > caption + thead > tr:first-child > th,
-table > caption + thead > tr:first-child > td,
-table > colgroup + thead > tr:first-child > th,
-table > colgroup + thead > tr:first-child > td,
-table > thead:first-child > tr:first-child > th,
-table > thead:first-child > tr:first-child > td {
-	border-top: 0;
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
 }
-table > tbody + tbody {
-	border-top: 2px solid #333;
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
 }
-p {
-	font-weight: 300;
-	line-height: 1.5;
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
 }
-abbr {
-	border-bottom: 1px black dotted;
-	cursor: help;
-}
-pre,
-code {
-	font-family: Menlo, Monaco, "Courier New", monospace;
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
 }
 
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
 code,
-.md-fences  {
-	color: #7a7a7a;
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
 }
 
 .md-fences {
-	padding: 1.125em;
-	margin-bottom: 0.88em;
-	font-size: 1rem;
-	border: 1px solid #7a7a7a;
-	padding-bottom: 0.5rem;
-	padding-top: 0.5rem;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
 }
 
-blockquote {
-	padding: 1.33em;
-	font-style: italic;
-	border-left: 5px solid #7a7a7a;
-	color: #555;
-}
-blockquote em {
-	color: #000;
-}
-blockquote footer {
-	font-size: .85rem;
-	font-style: normal;
-	background-color: #fff;
-	color: #7a7a7a;
-	border-color: transparent;
-}
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
-	font-weight: bold;
-	line-height: 1.2;
-	margin: 1em 0 0.5em;
-}
-@media screen and (min-width: 48em) {
-	.h1,
-	h1 {
-		font-size: 3.250rem;
-	}
-	.h2,
-	h2 {
-		font-size: 2.298rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.625rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.3rem;
-	}
-	#write>h4.md-focus:before,
-	#write>h5.md-focus:before,
-	#write>h6.md-focus:before{
-		top: 1px;
-	}
-	.p,
-	p,
-	li {
-		font-size: 1.25rem;
-		line-height: 1.8;
-	}
-	table {
-		font-size: 1.25rem;
-	}
-}
-@media (max-width: 48em) {
-	blockquote {
-		margin-left: 1rem;
-		margin-right: 0;
-		padding: 0.5em;
-	}
-	.h1,
-	h1 {
-		font-size: 2.827rem;
-	}
-	.h2,
-	h2 {
-		font-size: 1.999rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.413rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.3rem;
-	}
-}
-@media screen and (min-width: 64em) {
-	.h1,
-	h1 {
-		font-size: 4.498rem;
-	}
-	.h2,
-	h2 {
-		font-size: 2.29rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.9rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.591rem;
-	}
-	#write>h4.md-focus:before{
-		top:4px;
-	}
-}
-a {
-	color: #463F5C;
-	text-decoration: underline;
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
 }
 
-#write {
-	padding-top: 2rem;
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
 }
 
+.md-fences {
+	background-color: #f8f8f8;
+}
 #write pre.md-meta-block {
-	min-height: 35px;
-	padding: 0.5em 1em;
-	white-space: pre;
-	border: 0px;
-
-	border-left: 30px #f8f8f8 solid;
-	border-right: 30px #f8f8f8 solid;
-	width: 100vw;
-	max-width: calc(100% + 60px);
-
-	margin-left: -30px;
-	margin-bottom: 2em;
-	margin-top: -2010px;
-	padding-top: 2000px;
-	padding-bottom: 10px;
-	line-height: 1.5em;
-	color: #7a7a7a;
-	background-color: #fafafa;
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
-	font-weight: 300;
-	clear: both;
-	padding-left: 0;
-	font-size:1.125rem;
-}
-.md-image>.md-meta {
-	color: #463F5C
-}
-.footnotes {
-	font-size:1.1rem;
-}
-.md-tag {
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
-}
-.code-tooltip {
-	background: white;
-}
-.code-tooltip-content {
-	font-size: 1.1rem;
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
 }
 
-.task-list{
-	padding-left: 0;
-}
-
-.md-task-list-item {
-	padding-left:34px;
-}
-
-.md-task-list-item > input{
-	width: 1.25rem;
-	height: 1.25rem;
-	display: block;
-	-webkit-appearance: initial;
-	top: -0.2rem;
-	margin-left: -1.6em;
-	margin-top: calc(1rem - 7px);
-	border: none;
-}
-
-.md-task-list-item > input:focus{
-	outline: none;
-	box-shadow: none;
-}
-
-.md-task-list-item > input:before{
-	border: 1px solid #555;
-	border-radius: 1.5rem;
-	width: 1.5rem;
-	height: 1.5rem;
-	background: #fff;
-	content: ' ';
-	transition: background-color 200ms ease-in-out;
-	display: block;
-}
-
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before{
-	background: #333;
-	border-width: 2px;
-	display:inline-block;
-	transition: background-color 200ms ease-in-out;
-}
-
-.md-task-list-item > input:checked:after,
-.md-task-list-item > input[checked]:after {
-	opacity: 1;
-}
-
-.md-task-list-item > input:after {
-	opacity: 1;
-	-webkit-transition: opacity 0.05s ease-in-out;
-	-moz-transition: opacity 0.05s ease-in-out;
-	transition: opacity 0.05s ease-in-out;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-	position: absolute;
-	top: 0.4375rem;
-	left: 0.28125rem;
-	width: 0.9375rem;
-	height: 0.5rem;
-	border: 3px solid #fff;
-	border-top: 0;
-	border-right: 0;
-	content: ' ';
-	opacity: 0;
-}
-
-.md-tag {
-	color:inherit;
-}
-
-.md-toc:focus .md-toc-content{
-	margin-top: 19px;
-}
-
-#typora-sidebar {
-	font-size:1rem !important;
-}
-
-.html-for-mac #typora-sidebar {
-	background-color:white;
-}
-
-.outline-content li, .outline-content ul {
-	font-size:1rem !important;
-}
-
-.outline-title {
-	line-height: inherit;
-	margin-top: 10px;
-}
-
-.outline-expander {
-	width: 18px;
-}
-
-.outline-expander:before {
- 	content: "+";
-	font-family: inherit;
-	color: rgb(108, 108, 108); 
-  font-size: 1.5rem;
- 	top: -0.1rem;
-}
-
-.outline-expander:hover:before {
-	content: "+";
-}
-
-.outline-item-open>.outline-item>.outline-expander:before{
-	content: "-";
-}
-
-/** source code mode */
-#typora-source {
-	font-family: Courier, monospace;
-    color: #6A6A6A;
-}
-
-.os-windows #typora-source {
-	font-family: inherit;
-}
-
-.cm-s-typora-default .cm-header, 
-.cm-s-typora-default .cm-property,
-.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
-	color: #428bca;
-}
-
-.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
-	color: #777777;
-}
-
-.md-diagram-panel {
-	margin-top: 24px;
-	margin-left: -1.2em;
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
 }
 
 .md-mathjax-midline {
-	background: #fafafa;
+    background: #fafafa;
 }
 
-.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
-.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
-    bottom: -3.4em;
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
 }
 
 .dropdown-menu .divider {
-	border-color: #e5e5e5;
+    border-color: #e5e5e5;
+    opacity: 0.4;
 }
 
-li {
-	margin: 0.5rem 0;
+.ty-preferences .window-content {
+    background-color: #fafafa;
 }
 
-li > *:last-child {
-	margin-bottom: 0;
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
 }
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
 
 
 mjx-container[jax="SVG"] {
@@ -828,19 +742,19 @@ mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
 </style><title>fiammetta</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='fiammetta-meta-rl-powered-congestion-control'><em><span>Fiammetta</span></em><span>: Meta-RL Powered Congestion Control</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#fiammetta-meta-rl-powered-congestion-control"><em>Fiammetta</em>: Meta-RL Powered Congestion Control</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n4"><a class="md-toc-inner" href="#1-introduction">1. Introduction</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n8"><a class="md-toc-inner" href="#2-real-time-interactive-video-communication">2. Real-time Interactive Video Communication</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n18"><a class="md-toc-inner" href="#3-existing-efforts">3. Existing Efforts</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n81"><a class="md-toc-inner" href="#31-rule-based-solutions">3.1 Rule Based Solutions</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n83"><a class="md-toc-inner" href="#32-learning-based-solutions">3.2 Learning Based Solutions</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n34"><a class="md-toc-inner" href="#4-our-solution---fiammetta">4. Our Solution - Fiammetta</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n35"><a class="md-toc-inner" href="#41-the-big-picture">4.1 The Big Picture</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n46"><a class="md-toc-inner" href="#42-feasibility-study">4.2 Feasibility Study</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n89"><a class="md-toc-inner" href="#43-training-tricks">4.3 Training Tricks</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n96"><a class="md-toc-inner" href="#action-space-design">Action Space Design</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n119"><a class="md-toc-inner" href="#policy-pretraining-with-emulator">Policy Pretraining with Emulator</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n100"><a class="md-toc-inner" href="#safeguard">Safeguard</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n53"><a class="md-toc-inner" href="#7-performances">7. Performances</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n61"><a class="md-toc-inner" href="#8-whats-next">8. What's Next?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n62"><a class="md-toc-inner" href="#fairness-concern">Fairness Concern</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n64"><a class="md-toc-inner" href="#computational-overhead">Computational Overhead</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n66"><a class="md-toc-inner" href="#references">References</a></span></p></div><h2 id='1-introduction'><span>1. Introduction</span></h2><p><span>Maximizing </span><strong><span>quality of experience (QoE)</span></strong><span> for </span><strong><span>interactive video streaming</span></strong><span> has been a long-standing challenge, as its delay-sensitive nature makes it more vulnerable to </span><strong><span>bandwidth fluctuations</span></strong><span>. While </span><strong><span>reinforcement learning (RL)</span></strong><span> has demonstrated great potential, existing works are either limited by fixed models or require enormous data/time for online adaptation, which struggle to fit time-varying and diverse network states. </span></p><p><span>In this essay, I will introduce our project </span><em><strong><span>Fiammetta</span></strong></em><span>, a </span><strong><span>meta-reinforcement-learning (Meta-RL) based congestion control algorithm</span></strong><span> that aims to tackle the above challenge. To begin with, we performed a large-scale measurement on the interactive video service of </span><em><strong><span>Tencent WeCom</span></strong></em><span> to study real-world network fluctuations. Surprisingly, our analysis shows that, compared to time-varying network metrics, </span><strong><span>network statistics exhibit noticeable short-term continuity</span></strong><span>, which offers opportunities for few-shot learning methods such as meta-learning. Building on short-term continuity, </span><em><span>Fiammetta</span></em><span> accumulates learning experiences through offline meta-training and enables fast online adaptation to changing network states through a few gradient updates. The results show that </span><em><span>Fiammetta</span></em><span> outperforms existing algorithms significantly, i</span><strong><span>mproving video bitrate by 3.6%-16.2% without increasing stalling rate</span></strong><span>. </span></p><p><span>The related </span><a href='https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf'><span>paper</span></a><span> I co-authored: </span><em><span>&quot;From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning&quot;</span></em><span> will be published at </span><strong><span>INFOCOM&#39;23</span></strong><span> in this May.</span></p><h2 id='2-real-time-interactive-video-communication'><span>2. Real-time Interactive Video Communication</span></h2><p><span>Recent years have witnessed the emergence of ultralow-latency interactive video applications, such as WeChat, Skype, Zoom, Facetime, etc. Especially with the outbreak of COVID-19 that bounds people with social distancing, the demand for digital classrooms, video conferences, e-commerce, etc. has increased substantially. Polaris Market reports that the global interactive video market is expected to reach $10.23 billion by 20281.</span></p><p><span>Despite the rapid development, the quality of experience (QoE) of interactive video streaming remains unsatisfactory. For example, blurry images and frequent stalling. It is because compared with VoD streaming, interactive video streaming is more vulnerable to varying network conditions for its low-latency requirement for the following reasons:</span></p><p><img src="./assets/Fiammetta-v2.jpg" referrerpolicy="no-referrer" alt="Fiammetta-v2"></p><ol start='' ><li><p><span>Unlike VoD streaming, where the client has a video buffer of serval seconds, the interactive video client has a </span><strong><span>limited video buffer of hundreds of milliseconds</span></strong><span>, which makes it more vulnerable to imperfect bandwidth estimations. </span></p></li><li><p><span>The limited codec buffer </span><strong><span>degrades the compression efficiency</span></strong><span>, and more bits are produced to be transmitted. </span></p></li></ol><p><span>How can we </span><strong><span>adapt the bitrate</span></strong><span> of an interactive video streaming system to </span><strong><span>varying network conditions</span></strong><span>?</span></p><h2 id='3-existing-efforts'><span>3. Existing Efforts</span></h2><h3 id='31-rule-based-solutions'><span>3.1 Rule Based Solutions</span></h3><p><strong><span>Congestion control (CC)</span></strong><span> algorithms are developed to adapt video-sending bitrate according to the estimated network capacity (bandwidth). The core part of CC is to model the network link and bandwidth estimation. Existing efforts could be categorized into </span><strong><span>rule-based CC</span></strong><span> and </span><strong><span>learning-based CC</span></strong><span>.</span></p><p><span>Rule-based CC algorithms such as </span><em><strong><span>GCC</span></strong></em><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup><span> and </span><em><span>BBR</span></em><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span>. They typically follow AIMD (additive-increase/multiplicative-decrease) / MIMD (multiplicative-increase/multiplicative-decrease)-like approaches that require a </span><strong><span>probing phase</span></strong><span> to converge sending bitrate to bandwidth. For instance, </span><em><span>GCC</span></em><span> iteratively estimates </span><em><span>bandwidth</span></em><span> and </span><em><span>one-way queuing delay</span></em><span> with a linear </span><em><span>Kalman Filter</span></em><span> (implemented in the &quot;Arrival filter&quot; in the following diagram), which assumes a static zero-mean Gaussian noise model.</span></p><p><img src="./assets/image-20230827160359753.png" alt="image-20230827160359753" style="zoom: 50%;" /></p><div align=center>
+<div id='write'  class=''><h1 id='fiammetta-meta-rl-powered-congestion-control'><em><span>Fiammetta</span></em><span>: Meta-RL Powered Congestion Control</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#fiammetta-meta-rl-powered-congestion-control"><em>Fiammetta</em>: Meta-RL Powered Congestion Control</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n4"><a class="md-toc-inner" href="#1-introduction">1. Introduction</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n8"><a class="md-toc-inner" href="#2-real-time-interactive-video-communication">2. Real-time Interactive Video Communication</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n18"><a class="md-toc-inner" href="#3-existing-efforts">3. Existing Efforts</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n81"><a class="md-toc-inner" href="#31-rule-based-solutions">3.1 Rule Based Solutions</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n83"><a class="md-toc-inner" href="#32-learning-based-solutions">3.2 Learning Based Solutions</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n34"><a class="md-toc-inner" href="#4-our-solution---fiammetta">4. Our Solution - Fiammetta</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n35"><a class="md-toc-inner" href="#41-the-big-picture">4.1 The Big Picture</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n46"><a class="md-toc-inner" href="#42-feasibility-study">4.2 Feasibility Study</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n89"><a class="md-toc-inner" href="#43-training-tricks">4.3 Training Tricks</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n96"><a class="md-toc-inner" href="#431-action-space-design">4.3.1 Action Space Design</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n119"><a class="md-toc-inner" href="#432-policy-pretraining-with-emulator">4.3.2 Policy Pretraining with Emulator</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n100"><a class="md-toc-inner" href="#433-safeguard">4.3.3 Safeguard</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n53"><a class="md-toc-inner" href="#7-performances">7. Performances</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n61"><a class="md-toc-inner" href="#8-whats-next">8. What's Next?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n62"><a class="md-toc-inner" href="#81-fairness-concern">8.1 Fairness Concern</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n64"><a class="md-toc-inner" href="#82-computational-overhead">8.2 Computational Overhead</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n66"><a class="md-toc-inner" href="#references">References</a></span></p></div><h2 id='1-introduction'><span>1. Introduction</span></h2><p><span>Maximizing </span><strong><span>quality of experience (QoE)</span></strong><span> for </span><strong><span>interactive video streaming</span></strong><span> has been a long-standing challenge, as its delay-sensitive nature makes it more vulnerable to </span><strong><span>bandwidth fluctuations</span></strong><span>. While </span><strong><span>reinforcement learning (RL)</span></strong><span> has demonstrated great potential, existing works are either limited by fixed models or require enormous data/time for online adaptation, which struggle to fit time-varying and diverse network states. </span></p><p><span>In this essay, I will introduce our project </span><em><strong><span>Fiammetta</span></strong></em><span>, a </span><strong><span>meta-reinforcement-learning (Meta-RL) based congestion control algorithm</span></strong><span> that aims to tackle the above challenge. To begin with, we performed a large-scale measurement on the interactive video service of </span><em><strong><span>Tencent WeCom</span></strong></em><span> to study real-world network fluctuations. Surprisingly, our analysis shows that, compared to time-varying network metrics, </span><strong><span>network statistics exhibit noticeable short-term continuity</span></strong><span>, which offers opportunities for few-shot learning methods such as meta-learning. Building on short-term continuity, </span><em><span>Fiammetta</span></em><span> accumulates learning experiences through offline meta-training and enables fast online adaptation to changing network states through a few gradient updates. The results show that </span><em><span>Fiammetta</span></em><span> outperforms existing algorithms significantly, i</span><strong><span>mproving video bitrate by 3.6%-16.2% without increasing stalling rate</span></strong><span>. </span></p><p><span>The related </span><a href='https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf'><span>paper</span></a><span> I co-authored: </span><em><span>&quot;From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning&quot;</span></em><span> will be published at </span><strong><span>INFOCOM&#39;23</span></strong><span> in this May.</span></p><h2 id='2-real-time-interactive-video-communication'><span>2. Real-time Interactive Video Communication</span></h2><p><span>Recent years have witnessed the emergence of ultralow-latency interactive video applications, such as WeChat, Skype, Zoom, Facetime, etc. Especially with the outbreak of COVID-19 that bounds people with social distancing, the demand for digital classrooms, video conferences, e-commerce, etc. has increased substantially. Polaris Market reports that the global interactive video market is expected to reach $10.23 billion by 20281.</span></p><p><span>Despite the rapid development, the quality of experience (QoE) of interactive video streaming remains unsatisfactory. For example, blurry images and frequent stalling. It is because compared with VoD streaming, interactive video streaming is more vulnerable to varying network conditions for its low-latency requirement for the following reasons:</span></p><p><img src="./assets/Fiammetta-v2.jpg" alt="Fiammetta-v2" style="zoom: 25%;" /></p><ol start='' ><li><p><span>Unlike VoD streaming, where the client has a video buffer of serval seconds, the interactive video client has a </span><strong><span>limited video buffer of hundreds of milliseconds</span></strong><span>, which makes it more vulnerable to imperfect bandwidth estimations. </span></p></li><li><p><span>The limited codec buffer </span><strong><span>degrades the compression efficiency</span></strong><span>, and more bits are produced to be transmitted. </span></p></li></ol><p><span>How can we </span><strong><span>adapt the bitrate</span></strong><span> of an interactive video streaming system to </span><strong><span>varying network conditions</span></strong><span>?</span></p><h2 id='3-existing-efforts'><span>3. Existing Efforts</span></h2><h3 id='31-rule-based-solutions'><span>3.1 Rule Based Solutions</span></h3><p><strong><span>Congestion control (CC)</span></strong><span> algorithms are developed to adapt video-sending bitrate according to the estimated network capacity (bandwidth). The core part of CC is to model the network link and bandwidth estimation. Existing efforts could be categorized into </span><strong><span>rule-based CC</span></strong><span> and </span><strong><span>learning-based CC</span></strong><span>.</span></p><p><span>Rule-based CC algorithms such as </span><em><strong><span>GCC</span></strong></em><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup><span> and </span><em><span>BBR</span></em><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span>. They typically follow AIMD (additive-increase/multiplicative-decrease) / MIMD (multiplicative-increase/multiplicative-decrease)-like approaches that require a </span><strong><span>probing phase</span></strong><span> to converge sending bitrate to bandwidth. For instance, </span><em><span>GCC</span></em><span> iteratively estimates </span><em><span>bandwidth</span></em><span> and </span><em><span>one-way queuing delay</span></em><span> with a linear </span><em><span>Kalman Filter</span></em><span> (implemented in the &quot;Arrival filter&quot; in the following diagram), which assumes a static zero-mean Gaussian noise model.</span></p><p><img src="./assets/image-20230827160359753.png" alt="image-20230827160359753" style="zoom: 50%;" /></p><div align=center>
 <center style="color:#808080">
 	Google Congestion Control (GCC)
 </center> 
-</div><p><span>The drawbacks of this paradigm are two-fold:</span></p><ol start='' ><li><p><span>The application-layer video codec and transport-layer protocols are uncoordinated</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup><span>. The bursty application-layer codec bitrate pattern (i.e., intermittent frame-by-frame delivery) often </span><strong><span>misleads the transport-layer’s network capacity estimation</span></strong><span>.</span></p></li><li><p><span>The probing phase suffers a slow convergence, leading to a </span><strong><span>low bandwidth utilization</span></strong><span>. Frequent </span><strong><span>change of the network state</span></strong><span> (handover in wireless networks, for instance) worsen the matter as the bottleneck link capacity and propagation delay change too fast for the prober to catch up.</span></p></li></ol><h3 id='32-learning-based-solutions'><span>3.2 Learning Based Solutions</span></h3><p><span>To tackle the first problem, learning-based congestion control</span><sup class='md-footnote'><a href='#dfref-footnote-3-1' name='ref-footnote-3-1'>3</a></sup><span> has been proposed. They replace the rule-based congestion control algorithms with </span><strong><span>deep reinforcement learning (DRL)</span></strong><span> models. However, they still suffer from the second problem imposed by fixed </span><strong><span>offline-learned</span></strong><span> neuron network parameters. </span></p><p><span>Recent studies</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup><sup class='md-footnote'><a href='#dfref-footnote-5' name='ref-footnote-5'>5</a></sup><span> investigate the paradigm of </span><strong><span>online learning</span></strong><span>. Specifically, they fine-tune the offline learned model online with transfer learning to adapt to unseen network conditions. Nevertheless, they require a large amount of data/time for transfer learning, which hinders fast adaptation to new network states. </span></p><p><span>To better understand the dilemma, the following figure showcases a network trace with four network states:</span></p><p><img src="./assets/Fiammetta-v2-1693128608873-2.jpg" alt="Fiammetta-v2" style="zoom:50%;" /></p><p><span>The model trained offline may perform poorly in the middle two unseen states. With the aid of online learning, things are getting better, but still far from optimal due to the slow adaptation of transfer learning, For example, tens of minutes, even hours. We aim to </span><strong><span>adapt quickly to diverse and time-varying network states</span></strong><span>, pushing QoE to the limit. </span></p><h2 id='4-our-solution---fiammetta'><span>4. Our Solution - Fiammetta</span></h2><h3 id='41-the-big-picture'><span>4.1 The Big Picture</span></h3><p><span>We resort to recent advances in few-shot adaptation methods such as </span><strong><span>meta-learning</span></strong><span>, more specifically, </span><strong><span>meta reinforcement learning (Meta-RL)</span></strong><span>, as no optimal bitrate is available in the training phase. This idea leads us to </span><em><strong><span>Fiammetta</span></strong></em><span>, a Meta-Reinforcement-Learning-based bitrate adaptation algorithm for interactive video systems.</span></p><p><em><span>Fiammetta</span></em><span> is based on </span><strong><span>model agnostic meta learning (MAML)</span></strong><span> framework, which consists of two phases: </span><em><span>meta-training</span></em><span> and </span><em><span>meta-testing</span></em><span>.</span></p><p>&nbsp;</p><p><img src="./assets/Fiammetta-v2-1693129629064-4.jpg" referrerpolicy="no-referrer" alt="Fiammetta-v2"></p><div align=center>
+</div><p><span>The drawbacks of this paradigm are two-fold:</span></p><ol start='' ><li><p><span>The application-layer video codec and transport-layer protocols are uncoordinated</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup><span>. The bursty application-layer codec bitrate pattern (i.e., intermittent frame-by-frame delivery) often </span><strong><span>misleads the transport-layer’s network capacity estimation</span></strong><span>.</span></p></li><li><p><span>The probing phase suffers a slow convergence, leading to a </span><strong><span>low bandwidth utilization</span></strong><span>. Frequent </span><strong><span>change of the network state</span></strong><span> (handover in wireless networks, for instance) worsen the matter as the bottleneck link capacity and propagation delay change too fast for the prober to catch up.</span></p></li></ol><h3 id='32-learning-based-solutions'><span>3.2 Learning Based Solutions</span></h3><p><span>To tackle the first problem, learning-based congestion control</span><sup class='md-footnote'><a href='#dfref-footnote-3-1' name='ref-footnote-3-1'>3</a></sup><span> has been proposed. They replace the rule-based congestion control algorithms with </span><strong><span>deep reinforcement learning (DRL)</span></strong><span> models. However, they still suffer from the second problem imposed by fixed </span><strong><span>offline-learned</span></strong><span> neuron network parameters. </span></p><p><span>Recent studies</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup><sup class='md-footnote'><a href='#dfref-footnote-5' name='ref-footnote-5'>5</a></sup><span> investigate the paradigm of </span><strong><span>online learning</span></strong><span>. Specifically, they fine-tune the offline learned model online with transfer learning to adapt to unseen network conditions. Nevertheless, they require a large amount of data/time for transfer learning, which hinders fast adaptation to new network states. </span></p><p><span>To better understand the dilemma, the following figure showcases a network trace with four network states:</span></p><p><img src="./assets/Fiammetta-v2-1693128608873-2.jpg" alt="Fiammetta-v2" style="zoom: 25%;" /></p><p><span>The model trained offline may perform poorly in the middle two unseen states. With the aid of online learning, things are getting better, but still far from optimal due to the slow adaptation of transfer learning, For example, tens of minutes, even hours. We aim to </span><strong><span>adapt quickly to diverse and time-varying network states</span></strong><span>, pushing QoE to the limit. </span></p><h2 id='4-our-solution---fiammetta'><span>4. Our Solution - Fiammetta</span></h2><h3 id='41-the-big-picture'><span>4.1 The Big Picture</span></h3><p><span>We resort to recent advances in few-shot adaptation methods such as </span><strong><span>meta-learning</span></strong><span>, more specifically, </span><strong><span>meta reinforcement learning (Meta-RL)</span></strong><span>, as no optimal bitrate is available in the training phase. This idea leads us to </span><em><strong><span>Fiammetta</span></strong></em><span>, a Meta-Reinforcement-Learning-based bitrate adaptation algorithm for interactive video systems.</span></p><p><em><span>Fiammetta</span></em><span> is based on </span><strong><span>model agnostic meta learning (MAML)</span></strong><span> framework, which consists of two phases: </span><em><span>meta-training</span></em><span> and </span><em><span>meta-testing</span></em><span>.</span></p><p>&nbsp;</p><p><img src="./assets/Fiammetta-v2-1693129629064-4.jpg" alt="Fiammetta-v2" style="zoom:25%;" /></p><div align=center>
 <center style="color:#808080">
 	Meta-training
 </center> 
-</div><p><span>The goal of </span><em><span>the meta-training</span></em><span> phase is to obtain an initial model as a good starting point for further model adaptation. Specifically, the training consists of an inner loop and an outer loop. For every cycle of the outer loop update, a batch of </span><strong><span>tasks</span></strong><span> will be sampled from its prior distribution. Then, in the inner loop, the initial model interacts with a simulator given the generated traces of sampled tasks and is updated to maximize the pre-defined objective function. At the end of the inner loop, the gradients from all sampled tasks will be aggregated to update the initial model. Finally, </span><strong><span>meta-training provides better weight initialization</span></strong><span> for unseen new tasks.</span></p><p><img src="./assets/Fiammetta-v2-1693129810451-6.jpg" referrerpolicy="no-referrer" alt="Fiammetta-v2"></p><div align=center>
+</div><p><span>The goal of </span><em><span>the meta-training</span></em><span> phase is to obtain an initial model as a good starting point for further model adaptation. Specifically, the training consists of an inner loop and an outer loop. For every cycle of the outer loop update, a batch of </span><strong><span>tasks</span></strong><span> will be sampled from its prior distribution. Then, in the inner loop, the initial model interacts with a simulator given the generated traces of sampled tasks and is updated to maximize the pre-defined objective function. At the end of the inner loop, the gradients from all sampled tasks will be aggregated to update the initial model. Finally, </span><strong><span>meta-training provides better weight initialization</span></strong><span> for unseen new tasks.</span></p><p><img src="./assets/Fiammetta-v2-1693129810451-6.jpg" alt="Fiammetta-v2" style="zoom:25%;" /></p><div align=center>
 <center style="color:#808080">
 	Meta-testing
 </center> 
-</div><p><span>In the </span><em><span>meta-testing</span></em><span> phase, the initial model adapts quickly to new tasks and generates a </span><strong><span>specialized sub-model</span></strong><span> with just a few gradient descents. It first </span><strong><span>identifies the appearance of new tasks.</span></strong><span> Once detected, it will activate meta-testing. Specifically, it generates network traces within the detected new task and updates the initial model to produce the sub-model accommodated to the new task, following the standard reinforcement learning pipeline. </span></p><h3 id='42-feasibility-study'><span>4.2 Feasibility Study</span></h3><p><span>Despite the potential of Meta-RL, one question remains: </span><strong><span>Is meta-learning fast enough to adapt?</span></strong><span> Typically, the adaptation process of meta-learning algorithms still requires several steps of gradient descent, which consumes 1 or 2 seconds on our server. Thus, we must first know how fast the real-world network state changes.</span></p><p><img src="./assets/Fiammetta-v2-1693130278373-8.jpg" alt="Fiammetta-v2" style="zoom:50%;" /></p><p><span>To investigate the characteristics of real-world network traces, we conduct a measurement study on a large-scale commercial network dataset collected by </span><strong><span>Tencent WeCom interactive video platform</span></strong><span>. The dataset consists of </span><strong><span>14,000</span></strong><span> real-world video sessions spanning around </span><strong><span>390 hours</span></strong><span>.</span></p><p><img src="./assets/Fiammetta-v2-1693130499535-10.jpg" alt="Fiammetta-v2" style="zoom:50%;" /></p><p><span>We first demonstrate how the instant bandwidth evolves during a time period of 1s and 4s (subfigure (a)). We can see that the bandwidth fluctuates drastically and is highly unpredictable. However, if we apply a sliding window on the traces and analyze their statistics, we notice that there exists </span><strong><span>short-term continuity</span></strong><span> in the statistics (subfigure (b)-(d)). For example, during a period of 4 seconds, both the mean and standard deviation vary less than 200 kbps in 90% of the cases. </span></p><p><span>We name the continuations as </span><em><span>network states</span></em><span>, which is the basic unit of our adaptation algorithm. The short-term continuity provides opportunities for meta-learning, where </span><strong><span>Meta-RL has the potential to keep up with the change of network states.</span></strong><span> </span></p><h3 id='43-training-tricks'><span>4.3 Training Tricks</span></h3><h4 id='action-space-design'><span>Action Space Design</span></h4><p><span>In previous works</span><sup class='md-footnote'><a href='#dfref-footnote-4-1' name='ref-footnote-4-1'>4</a></sup><sup class='md-footnote'><a href='#dfref-footnote-5-1' name='ref-footnote-5-1'>5</a></sup><span>, the policy directly outputs the absolute bitrate. However, through our experiments, this approach performs poorly given Phighly dynamic bandwidth. In response, we let the policy output the </span><strong><span>magnification</span></strong><span>, i.e., </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="3.669ex" height="3.245ex" role="img" focusable="false" viewBox="0 -942.3 1621.5 1434.4" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.113ex;" class=""><defs><path id="MJX-48-TEX-I-1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path><path id="MJX-48-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-48-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-48-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="msub" transform="translate(539.5,451.6) scale(0.707)"><g data-mml-node="mi"><use data-c="1D44F" xlink:href="#MJX-48-TEX-I-1D44F"></use></g><g data-mml-node="mi" transform="translate(462,-150) scale(0.707)"><use data-c="1D461" xlink:href="#MJX-48-TEX-I-1D461"></use></g></g><g data-mml-node="msub" transform="translate(220,-345) scale(0.707)"><g data-mml-node="mi"><use data-c="1D44F" xlink:href="#MJX-48-TEX-I-1D44F"></use></g><g data-mml-node="TeXAtom" transform="translate(462,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-48-TEX-I-1D461"></use></g><g data-mml-node="mo" transform="translate(361,0)"><use data-c="2212" xlink:href="#MJX-48-TEX-N-2212"></use></g><g data-mml-node="mn" transform="translate(1139,0)"><use data-c="31" xlink:href="#MJX-48-TEX-N-31"></use></g></g></g><rect width="1381.5" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><msub><mi>b</mi><mi>t</mi></msub><msub><mi>b</mi><mrow data-mjx-texclass="ORD"><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mfrac></math></mjx-assistive-mml></mjx-container><script type="math/tex">\frac{b_t}{b_{t-1}}</script><span>. The reasons are two-fold:</span></p><ol><li><p><span>While </span><strong><span>Packet delay</span></strong><span> and </span><strong><span>delay jitter</span></strong><span> are more informative for reflecting network link congestions than absolute throughput in policy&#39;s state space, they are closely correlated with the </span><strong><span>relative changes</span></strong><span> of sending rate </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="0.971ex" height="1.595ex" role="img" focusable="false" viewBox="0 -694 429 705" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-50-TEX-I-1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D44F" xlink:href="#MJX-50-TEX-I-1D44F"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">b</script><span>.</span></p></li><li><p><span>Adopting magnification enables a more flexible control while </span><strong><span>decreasing the dimension of action space</span></strong><span>.</span></p></li></ol><h4 id='policy-pretraining-with-emulator'><span>Policy Pretraining with Emulator</span></h4><p><span>Ideally, reinforcement learning requires the policy to directly learn from the </span><strong><span>real-world environment.</span></strong><span> However, the sampling process of the testbed is too slow - only 10 samples(steps) per second. As such, 1 million steps consumes ~28 hours. In response, we build a emulator that can simulate packet-level network traffic (based on </span><a href='https://github.com/AItransCompetition/simple_emulator'><span>simple_emulator</span></a><span>) which boosts the training process by ~50x. </span></p><p><span>The main difference between the emulator and testbed is the codec&#39;s behavior. To mitigate this sim-to-real problem, we then transfer the policy on the testbed for another 1 million steps.  As the best hyper-parameters have been found during the emulator phase, this step is typically performed only once.</span></p><h4 id='safeguard'><span>Safeguard</span></h4><p><span>We adopt a hand-craft safeguard to prevent the policy from getting stuck in extreme cases (seconds of delay or extremely low sending rate) due to its imperfection. The safeguard greatly </span><strong><span>accelerates the training process</span></strong><span>. Throughout the training, the policy typically becomes progressively less random, and the safeguard is activated less and less.</span></p><blockquote><p><span>For the detailed design of </span><em><span>Fiammetta</span></em><span>, please refer to our </span><a href='https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf'><span>paper</span></a><span>.</span></p></blockquote><h2 id='7-performances'><span>7. Performances</span></h2><p><span>We build an end-to-end measurement testbed and exploit the real-world network traces sponsored by </span><strong><span>Tencent WeCom</span></strong><span> to test the performance of </span><em><span>Fiammetta</span></em><span> and baseline algorithms. Here is a quick glance at our system implementation and the testbed.</span></p><p><img src="./assets/Fiammetta-v2-1693131265849-12.jpg" referrerpolicy="no-referrer" alt="Fiammetta-v2"></p><p><span>The testbed mainly consists of two PCs running WebRTC as a video traffic transceiver pair and one PC controlling network link through the TC (traffic control) tool. Besides, we implement </span><em><span>Fiammetta</span></em><span> and learning-based baseline algorithms on a remote RL server, and the video transceiver pair is connected to the RL server via an additional router to query the target bitrate. The RL server is a desktop equipped with an Intel Core i7-9700K CPU, Geforce RTX 1080Ti GPU, and 32 GB memory. </span></p><p><img src="./assets/image-20230827181613402.png" referrerpolicy="no-referrer" alt="image-20230827181613402"></p><p><span>We start by showing the overall performances. We can see that </span><em><span>Fiammetta</span></em><span> improves QoE by </span><strong><span>11.1%, 17.0%, and 26.7%</span></strong><span> compared with OnRL</span><strong><span>,</span></strong><span> Loki and GCC, respectively. </span></p><p><img src="./assets/image-20230827181641330.png" referrerpolicy="no-referrer" alt="image-20230827181641330"></p><p><span>We further investigate its performance under different network conditions. The results show that </span><em><span>Fiammetta</span></em><span> consistently outperforms baseline methods across different network conditions.</span></p><h2 id='8-whats-next'><span>8. What&#39;s Next?</span></h2><h3 id='fairness-concern'><span>Fairness Concern</span></h3><p><span>In this work, we considered a simplified scenario where </span><em><span>Fiammetta</span></em><span> operates alone in the network link. In real-world deployment, </span><strong><span>fairness (receiving a no larger share of the network than other flows)</span></strong><span> against TCP connections and other video sessions is essential to a good CC algorithm.</span></p><h3 id='computational-overhead'><span>Computational Overhead</span></h3><p><span>In our framework, the computation of </span><em><span>Fiammetta</span></em><span> is offloaded to an RL server following the practice of previous works </span><sup class='md-footnote'><a href='#dfref-footnote-4-2' name='ref-footnote-4-2'>4</a></sup><span>. However, our collaborators in Tencent suggested that a more efficient and mobile-friendly algorithm is preferred. A potential solution is integrating </span><strong><span>low-cost rule-based algorithms with high-performance learning-based algorithms</span></strong><span> </span><sup class='md-footnote'><a href='#dfref-footnote-6' name='ref-footnote-6'>6</a></sup><span> . We may delve into it in our future works.</span></p><h2 id='references'><span>References</span></h2><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
+</div><p><span>In the </span><em><span>meta-testing</span></em><span> phase, the initial model adapts quickly to new tasks and generates a </span><strong><span>specialized sub-model</span></strong><span> with just a few gradient descents. It first </span><strong><span>identifies the appearance of new tasks.</span></strong><span> Once detected, it will activate meta-testing. Specifically, it generates network traces within the detected new task and updates the initial model to produce the sub-model accommodated to the new task, following the standard reinforcement learning pipeline. </span></p><h3 id='42-feasibility-study'><span>4.2 Feasibility Study</span></h3><p><span>Despite the potential of Meta-RL, one question remains: </span><strong><span>Is meta-learning fast enough to adapt?</span></strong><span> Typically, the adaptation process of meta-learning algorithms still requires several steps of gradient descent, which consumes 1 or 2 seconds on our server. Thus, we must first know how fast the real-world network state changes.</span></p><p><img src="./assets/Fiammetta-v2-1693130278373-8.jpg" alt="Fiammetta-v2" style="zoom: 25%;" /></p><p><span>To investigate the characteristics of real-world network traces, we conduct a measurement study on a large-scale commercial network dataset collected by </span><strong><span>Tencent WeCom interactive video platform</span></strong><span>. The dataset consists of </span><strong><span>14,000</span></strong><span> real-world video sessions spanning around </span><strong><span>390 hours</span></strong><span>.</span></p><p><img src="./assets/Fiammetta-v2-1693130499535-10.jpg" alt="Fiammetta-v2" style="zoom: 25%;" /></p><p><span>We first demonstrate how the instant bandwidth evolves during a time period of 1s and 4s (subfigure (a)). We can see that the bandwidth fluctuates drastically and is highly unpredictable. However, if we apply a sliding window on the traces and analyze their statistics, we notice that there exists </span><strong><span>short-term continuity</span></strong><span> in the statistics (subfigure (b)-(d)). For example, during a period of 4 seconds, both the mean and standard deviation vary less than 200 kbps in 90% of the cases. </span></p><p><span>We name the continuations as </span><em><span>network states</span></em><span>, which is the basic unit of our adaptation algorithm. The short-term continuity provides opportunities for meta-learning, where </span><strong><span>Meta-RL has the potential to keep up with the change of network states.</span></strong><span> </span></p><h3 id='43-training-tricks'><span>4.3 Training Tricks</span></h3><h4 id='431-action-space-design'><span>4.3.1 Action Space Design</span></h4><p><span>In previous works</span><sup class='md-footnote'><a href='#dfref-footnote-4-1' name='ref-footnote-4-1'>4</a></sup><sup class='md-footnote'><a href='#dfref-footnote-5-1' name='ref-footnote-5-1'>5</a></sup><span>, the policy directly outputs the absolute bitrate. However, through our experiments, this approach performs poorly given highly dynamic bandwidth due to the limited bitrate choices and large action space. In response, we let the policy output the </span><strong><span>magnification</span></strong><span>, i.e., </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="3.669ex" height="3.245ex" role="img" focusable="false" viewBox="0 -942.3 1621.5 1434.4" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -1.113ex;" class=""><defs><path id="MJX-48-TEX-I-1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path><path id="MJX-48-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-48-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-48-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="msub" transform="translate(539.5,451.6) scale(0.707)"><g data-mml-node="mi"><use data-c="1D44F" xlink:href="#MJX-48-TEX-I-1D44F"></use></g><g data-mml-node="mi" transform="translate(462,-150) scale(0.707)"><use data-c="1D461" xlink:href="#MJX-48-TEX-I-1D461"></use></g></g><g data-mml-node="msub" transform="translate(220,-345) scale(0.707)"><g data-mml-node="mi"><use data-c="1D44F" xlink:href="#MJX-48-TEX-I-1D44F"></use></g><g data-mml-node="TeXAtom" transform="translate(462,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-48-TEX-I-1D461"></use></g><g data-mml-node="mo" transform="translate(361,0)"><use data-c="2212" xlink:href="#MJX-48-TEX-N-2212"></use></g><g data-mml-node="mn" transform="translate(1139,0)"><use data-c="31" xlink:href="#MJX-48-TEX-N-31"></use></g></g></g><rect width="1381.5" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><msub><mi>b</mi><mi>t</mi></msub><msub><mi>b</mi><mrow data-mjx-texclass="ORD"><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mfrac></math></mjx-assistive-mml></mjx-container><script type="math/tex">\frac{b_t}{b_{t-1}}</script><span>. The reasons are two-fold:</span></p><ol><li><p><span>While </span><strong><span>Packet delay</span></strong><span> and </span><strong><span>delay jitter</span></strong><span> are more informative for reflecting network link congestions than absolute throughput in policy&#39;s state space, they are closely correlated with the </span><strong><span>relative changes</span></strong><span> of sending rate </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="0.971ex" height="1.595ex" role="img" focusable="false" viewBox="0 -694 429 705" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-50-TEX-I-1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D44F" xlink:href="#MJX-50-TEX-I-1D44F"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">b</script><span>.</span></p></li><li><p><span>Adopting magnification enables a more flexible control while </span><strong><span>decreasing the dimension of action space</span></strong><span>.</span></p></li></ol><h4 id='432-policy-pretraining-with-emulator'><span>4.3.2 Policy Pretraining with Emulator</span></h4><p><span>Ideally, reinforcement learning requires the policy to directly learn from the real-world environment. However, the sampling process of the testbed is too slow - only 10 samples(steps) per second. As such, 1 million steps consumes ~28 hours. In response, we build a emulator that can simulate packet-level network traffic (based on </span><a href='https://github.com/AItransCompetition/simple_emulator'><span>simple_emulator</span></a><span>) which boosts the training process by </span><strong><span>~50x</span></strong><span>. </span></p><p><span>The main difference between the emulator and testbed is the codec&#39;s behavior. To mitigate this sim-to-real problem, we then transfer the policy on the testbed for another 1 million steps.  As the best hyper-parameters have been found during the emulator phase, this step is typically performed only once.</span></p><h4 id='433-safeguard'><span>4.3.3 Safeguard</span></h4><p><span>We adopt a hand-craft safeguard to prevent the policy from getting stuck in extreme cases (seconds of delay or extremely low sending rate) due to its imperfection. The safeguard greatly </span><strong><span>accelerates the training process</span></strong><span>. Throughout the training, the policy typically becomes progressively less random, and the safeguard is activated less and less.</span></p><blockquote><p><span>For the detailed design of </span><em><span>Fiammetta</span></em><span>, please refer to our </span><a href='https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf'><span>paper</span></a><span>.</span></p></blockquote><h2 id='7-performances'><span>7. Performances</span></h2><p><span>We build an end-to-end measurement testbed and exploit the real-world network traces sponsored by </span><strong><span>Tencent WeCom</span></strong><span> to test the performance of </span><em><span>Fiammetta</span></em><span> and baseline algorithms. Here is a quick glance at our system implementation and the testbed.</span></p><p><img src="./assets/Fiammetta-v2-1693131265849-12.jpg" alt="Fiammetta-v2" style="zoom:25%;" /></p><p><span>The testbed mainly consists of two PCs running WebRTC as a video traffic transceiver pair and one PC controlling network link through the TC (traffic control) tool. Besides, we implement </span><em><span>Fiammetta</span></em><span> and learning-based baseline algorithms on a remote RL server, and the video transceiver pair is connected to the RL server via an additional router to query the target bitrate. The RL server is a desktop equipped with an Intel Core i7-9700K CPU, Geforce RTX 1080Ti GPU, and 32 GB memory. </span></p><p><img src="./assets/image-20230827181613402.png" alt="image-20230827181613402" style="zoom: 50%;" /></p><p><span>We start by showing the overall performances. We can see that </span><em><span>Fiammetta</span></em><span> improves QoE by </span><strong><span>11.1%, 17.0%, and 26.7%</span></strong><span> compared with OnRL</span><strong><span>,</span></strong><span> Loki and GCC, respectively. </span></p><p><img src="./assets/image-20230827181641330.png" alt="image-20230827181641330" style="zoom:50%;" /></p><p><span>We further investigate its performance under different network conditions. The results show that </span><em><span>Fiammetta</span></em><span> consistently outperforms baseline methods across different network conditions.</span></p><h2 id='8-whats-next'><span>8. What&#39;s Next?</span></h2><h3 id='81-fairness-concern'><span>8.1 Fairness Concern</span></h3><p><span>In this work, we considered a simplified scenario where </span><em><span>Fiammetta</span></em><span> operates alone in the network link. In real-world deployment, </span><strong><span>fairness (receiving a no larger share of the network than other flows)</span></strong><span> against TCP connections and other video sessions is essential to a good CC algorithm.</span></p><h3 id='82-computational-overhead'><span>8.2 Computational Overhead</span></h3><p><span>In our framework, the computation of </span><em><span>Fiammetta</span></em><span> is offloaded to an RL server following the practice of previous works </span><sup class='md-footnote'><a href='#dfref-footnote-4-2' name='ref-footnote-4-2'>4</a></sup><span>. However, our collaborators in Tencent suggested that a more efficient and mobile-friendly algorithm is preferred. A potential solution is integrating </span><strong><span>low-cost rule-based algorithms with high-performance learning-based algorithms</span></strong><span> </span><sup class='md-footnote'><a href='#dfref-footnote-6' name='ref-footnote-6'>6</a></sup><span> . We may delve into it in our future works.</span></p><h2 id='references'><span>References</span></h2><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
 <div class='footnote-line'><span class='md-fn-count'>1</span> <span>Gaetano Carlucci, Luca De Cicco, Stefan Holmer, and Saverio Mascolo. 2016. Analysis and design of the google congestion control for web real-time communication (WebRTC). In Proceedings of the 7th International Conference on Multimedia Systems (MMSys &#39;16). Association for Computing Machinery, New York, NY, USA, Article 13, 1–12. </span><a href='https://doi.org/10.1145/2910017.2910605' target='_blank' class='url'>https://doi.org/10.1145/2910017.2910605</a> <a name='dfref-footnote-1' href='#ref-footnote-1' title='back to document' class='reversefootnote' >↩</a></div>
 <div class='footnote-line'><span class='md-fn-count'>2</span> <span>Neal Cardwell, Yuchung Cheng, C. Stephen Gunn, Soheil Hassas Yeganeh, and Van Jacobson. 2016. BBR: Congestion-Based Congestion Control: Measuring bottleneck bandwidth and round-trip propagation time. Queue 14, 5 (September-October 2016), 20–53. </span><a href='https://doi.org/10.1145/3012426.3022184' target='_blank' class='url'>https://doi.org/10.1145/3012426.3022184</a> <a name='dfref-footnote-2' href='#ref-footnote-2' title='back to document' class='reversefootnote' >↩</a></div>
 <div class='footnote-line'><span class='md-fn-count'>3</span> <span>Anfu Zhou, Huanhuan Zhang, Guangyuan Su, Leilei Wu, Ruoxuan Ma, Zhen Meng, Xinyu Zhang, Xiufeng Xie, Huadong Ma, and Xiaojiang Chen. 2019. Learning to Coordinate Video Codec with Transport Protocol for Mobile Video Telephony. In The 25th Annual International Conference on Mobile Computing and Networking (MobiCom &#39;19). Association for Computing Machinery, New York, NY, USA, Article 29, 1–16. </span><a href='https://doi.org/10.1145/3300061.3345430' target='_blank' class='url'>https://doi.org/10.1145/3300061.3345430</a> <a name='dfref-footnote-3' href='#ref-footnote-3' title='back to document' class='reversefootnote' >↩</a> <a name='dfref-footnote-3-1' href='#ref-footnote-3-1' title='back to document' class='reversefootnote' >↩</a></div>

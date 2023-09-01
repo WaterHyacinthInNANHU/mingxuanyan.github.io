@@ -16,7 +16,7 @@ Recent years have witnessed the emergence of ultralow-latency interactive video 
 
 Despite the rapid development, the quality of experience (QoE) of interactive video streaming remains unsatisfactory. For example, blurry images and frequent stalling. It is because compared with VoD streaming, interactive video streaming is more vulnerable to varying network conditions for its low-latency requirement for the following reasons:
 
-![Fiammetta-v2](./assets/Fiammetta-v2.jpg)
+<img src="./assets/Fiammetta-v2.jpg" alt="Fiammetta-v2" style="zoom: 25%;" />
 
 1. Unlike VoD streaming, where the client has a video buffer of serval seconds, the interactive video client has a **limited video buffer of hundreds of milliseconds**, which makes it more vulnerable to imperfect bandwidth estimations. 
 2. The limited codec buffer **degrades the compression efficiency**, and more bits are produced to be transmitted. 
@@ -52,7 +52,7 @@ Recent studies[^5][^6] investigate the paradigm of **online learning**. Specific
 
 To better understand the dilemma, the following figure showcases a network trace with four network states:
 
-<img src="./assets/Fiammetta-v2-1693128608873-2.jpg" alt="Fiammetta-v2" style="zoom:50%;" />
+<img src="./assets/Fiammetta-v2-1693128608873-2.jpg" alt="Fiammetta-v2" style="zoom: 25%;" />
 
 The model trained offline may perform poorly in the middle two unseen states. With the aid of online learning, things are getting better, but still far from optimal due to the slow adaptation of transfer learning, For example, tens of minutes, even hours. We aim to **adapt quickly to diverse and time-varying network states**, pushing QoE to the limit. 
 
@@ -66,7 +66,7 @@ We resort to recent advances in few-shot adaptation methods such as **meta-learn
 
 
 
-![Fiammetta-v2](./assets/Fiammetta-v2-1693129629064-4.jpg)
+<img src="./assets/Fiammetta-v2-1693129629064-4.jpg" alt="Fiammetta-v2" style="zoom:25%;" />
 
 <div align=center>
 <center style="color:#808080">
@@ -76,7 +76,7 @@ We resort to recent advances in few-shot adaptation methods such as **meta-learn
 
 The goal of *the meta-training* phase is to obtain an initial model as a good starting point for further model adaptation. Specifically, the training consists of an inner loop and an outer loop. For every cycle of the outer loop update, a batch of **tasks** will be sampled from its prior distribution. Then, in the inner loop, the initial model interacts with a simulator given the generated traces of sampled tasks and is updated to maximize the pre-defined objective function. At the end of the inner loop, the gradients from all sampled tasks will be aggregated to update the initial model. Finally, **meta-training provides better weight initialization** for unseen new tasks.
 
-![Fiammetta-v2](./assets/Fiammetta-v2-1693129810451-6.jpg)
+<img src="./assets/Fiammetta-v2-1693129810451-6.jpg" alt="Fiammetta-v2" style="zoom:25%;" />
 
 <div align=center>
 <center style="color:#808080">
@@ -89,11 +89,11 @@ In the *meta-testing* phase, the initial model adapts quickly to new tasks and g
 
 Despite the potential of Meta-RL, one question remains: **Is meta-learning fast enough to adapt?** Typically, the adaptation process of meta-learning algorithms still requires several steps of gradient descent, which consumes 1 or 2 seconds on our server. Thus, we must first know how fast the real-world network state changes.
 
-<img src="./assets/Fiammetta-v2-1693130278373-8.jpg" alt="Fiammetta-v2" style="zoom:50%;" />
+<img src="./assets/Fiammetta-v2-1693130278373-8.jpg" alt="Fiammetta-v2" style="zoom: 25%;" />
 
 To investigate the characteristics of real-world network traces, we conduct a measurement study on a large-scale commercial network dataset collected by **Tencent WeCom interactive video platform**. The dataset consists of **14,000** real-world video sessions spanning around **390 hours**.
 
-<img src="./assets/Fiammetta-v2-1693130499535-10.jpg" alt="Fiammetta-v2" style="zoom:50%;" />
+<img src="./assets/Fiammetta-v2-1693130499535-10.jpg" alt="Fiammetta-v2" style="zoom: 25%;" />
 
 We first demonstrate how the instant bandwidth evolves during a time period of 1s and 4s (subfigure (a)). We can see that the bandwidth fluctuates drastically and is highly unpredictable. However, if we apply a sliding window on the traces and analyze their statistics, we notice that there exists **short-term continuity** in the statistics (subfigure (b)-(d)). For example, during a period of 4 seconds, both the mean and standard deviation vary less than 200 kbps in 90% of the cases. 
 
@@ -101,20 +101,20 @@ We name the continuations as *network states*, which is the basic unit of our ad
 
 ### 4.3 Training Tricks
 
-#### Action Space Design
+#### 4.3.1 Action Space Design
 
-In previous works[^5][^6], the policy directly outputs the absolute bitrate. However, through our experiments, this approach performs poorly given Phighly dynamic bandwidth. In response, we let the policy output the **magnification**, i.e., $\frac{b_t}{b_{t-1}}$. The reasons are two-fold:
+In previous works[^5][^6], the policy directly outputs the absolute bitrate. However, through our experiments, this approach performs poorly given highly dynamic bandwidth due to the limited bitrate choices and large action space. In response, we let the policy output the **magnification**, i.e., $\frac{b_t}{b_{t-1}}$. The reasons are two-fold:
 
 1. While **Packet delay** and **delay jitter** are more informative for reflecting network link congestions than absolute throughput in policy's state space, they are closely correlated with the **relative changes** of sending rate $b$.
 2. Adopting magnification enables a more flexible control while **decreasing the dimension of action space**.
 
-#### Policy Pretraining with Emulator
+#### 4.3.2 Policy Pretraining with Emulator
 
-Ideally, reinforcement learning requires the policy to directly learn from the **real-world environment.** However, the sampling process of the testbed is too slow - only 10 samples(steps) per second. As such, 1 million steps consumes ~28 hours. In response, we build a emulator that can simulate packet-level network traffic (based on [simple_emulator](https://github.com/AItransCompetition/simple_emulator)) which boosts the training process by ~50x. 
+Ideally, reinforcement learning requires the policy to directly learn from the real-world environment. However, the sampling process of the testbed is too slow - only 10 samples(steps) per second. As such, 1 million steps consumes ~28 hours. In response, we build a emulator that can simulate packet-level network traffic (based on [simple_emulator](https://github.com/AItransCompetition/simple_emulator)) which boosts the training process by **~50x**. 
 
 The main difference between the emulator and testbed is the codec's behavior. To mitigate this sim-to-real problem, we then transfer the policy on the testbed for another 1 million steps.  As the best hyper-parameters have been found during the emulator phase, this step is typically performed only once.
 
-#### Safeguard
+#### 4.3.3 Safeguard
 
 We adopt a hand-craft safeguard to prevent the policy from getting stuck in extreme cases (seconds of delay or extremely low sending rate) due to its imperfection. The safeguard greatly **accelerates the training process**. Throughout the training, the policy typically becomes progressively less random, and the safeguard is activated less and less.
 
@@ -124,25 +124,25 @@ We adopt a hand-craft safeguard to prevent the policy from getting stuck in extr
 
 We build an end-to-end measurement testbed and exploit the real-world network traces sponsored by **Tencent WeCom** to test the performance of *Fiammetta* and baseline algorithms. Here is a quick glance at our system implementation and the testbed.
 
-![Fiammetta-v2](./assets/Fiammetta-v2-1693131265849-12.jpg)
+<img src="./assets/Fiammetta-v2-1693131265849-12.jpg" alt="Fiammetta-v2" style="zoom:25%;" />
 
 The testbed mainly consists of two PCs running WebRTC as a video traffic transceiver pair and one PC controlling network link through the TC (traffic control) tool. Besides, we implement *Fiammetta* and learning-based baseline algorithms on a remote RL server, and the video transceiver pair is connected to the RL server via an additional router to query the target bitrate. The RL server is a desktop equipped with an Intel Core i7-9700K CPU, Geforce RTX 1080Ti GPU, and 32 GB memory. 
 
-![image-20230827181613402](./assets/image-20230827181613402.png)
+<img src="./assets/image-20230827181613402.png" alt="image-20230827181613402" style="zoom: 50%;" />
 
 We start by showing the overall performances. We can see that *Fiammetta* improves QoE by **11.1%, 17.0%, and 26.7%** compared with OnRL**,** Loki and GCC, respectively. 
 
-![image-20230827181641330](./assets/image-20230827181641330.png)
+<img src="./assets/image-20230827181641330.png" alt="image-20230827181641330" style="zoom:50%;" />
 
 We further investigate its performance under different network conditions. The results show that *Fiammetta* consistently outperforms baseline methods across different network conditions.
 
 ## 8. What's Next?
 
-### Fairness Concern
+### 8.1 Fairness Concern
 
 In this work, we considered a simplified scenario where *Fiammetta* operates alone in the network link. In real-world deployment, **fairness (receiving a no larger share of the network than other flows)** against TCP connections and other video sessions is essential to a good CC algorithm.
 
-### Computational Overhead
+### 8.2 Computational Overhead
 
 In our framework, the computation of *Fiammetta* is offloaded to an RL server following the practice of previous works [^5]. However, our collaborators in Tencent suggested that a more efficient and mobile-friendly algorithm is preferred. A potential solution is integrating **low-cost rule-based algorithms with high-performance learning-based algorithms** [^7] . We may delve into it in our future works.
 
