@@ -16,20 +16,20 @@ Recent years have witnessed the emergence of ultralow-latency interactive video 
 
 Despite the rapid development, the quality of experience (QoE) of interactive video streaming remains unsatisfactory. For example, blurry images and frequent stalling. It is because compared with VoD streaming, interactive video streaming is more vulnerable to varying network conditions for its low-latency requirement for the following reasons:
 
-<img src="./assets/Fiammetta-v2.jpg" alt="Fiammetta-v2" style="zoom: 25%;" />
+<img src="fiammetta.assets/Fiammetta-v2.jpg" alt="Fiammetta-v2" style="zoom:25%;" />
 
-1. Unlike VoD streaming, where the client has a video buffer of serval seconds, the interactive video client has a **limited video buffer of hundreds of milliseconds**, which makes it more vulnerable to imperfect bandwidth estimations. 
-2. The limited codec buffer **degrades the compression efficiency**, and more bits are produced to be transmitted. 
+1. Unlike Video on Demand (VoD) streaming, where the client has a video buffer of serval seconds, the interactive video client has a **limited video buffer of hundreds of milliseconds**, which makes it more vulnerable to imperfect bandwidth estimations. 
+2. The limited codec buffer **degrades the compression efficiency**. More bits are produced to be transmitted which make it vulnerable to limited bandwidth.
 
-How can we **adapt the bitrate** of an interactive video streaming system to **varying network conditions**?
+In response, **congestion control (CC)** algorithms are developed to **adapt video-sending bitrate** according to the estimated network bandwidth.
 
 ## 3. Existing Efforts
 
+Existing efforts can be categorized into **rule-based CC** and **learning-based CC**.
+
 ### 3.1 Rule Based Solutions
 
-**Congestion control (CC)** algorithms are developed to adapt video-sending bitrate according to the estimated network capacity (bandwidth). The core part of CC is to model the network link and bandwidth estimation. Existing efforts could be categorized into **rule-based CC** and **learning-based CC**.
-
-Rule-based CC algorithms such as ***GCC***[^2] and *BBR*[^3]. They typically follow AIMD (additive-increase/multiplicative-decrease) / MIMD (multiplicative-increase/multiplicative-decrease)-like approaches that require a **probing phase** to converge sending bitrate to bandwidth. For instance, *GCC* iteratively estimates *bandwidth* and *one-way queuing delay* with a linear *Kalman Filter* (implemented in the "Arrival filter" in the following diagram), which assumes a static zero-mean Gaussian noise model.
+Rule-based CC algorithms such as *GCC*[^2] and *BBR*[^3]. They typically follow AIMD (additive-increase/multiplicative-decrease) / MIMD (multiplicative-increase/multiplicative-decrease)-like approaches that require a **probing phase** to converge sending bitrate to bandwidth. For instance, *GCC* iteratively estimates *bandwidth* and *one-way queuing delay* with a linear *Kalman Filter* (implemented in the "Arrival filter" in the following diagram), which assumes a static zero-mean Gaussian noise model.
 
 <img src="./assets/image-20230827160359753.png" alt="image-20230827160359753" style="zoom: 50%;" />
 
@@ -46,7 +46,7 @@ The drawbacks of this paradigm are two-fold:
 
 ### 3.2 Learning Based Solutions
 
-To tackle the first problem, learning-based congestion control[^4] has been proposed. They replace the rule-based congestion control algorithms with **deep reinforcement learning (DRL)** models. However, they still suffer from the second problem imposed by fixed **offline-learned** neuron network parameters. 
+To tackle problem 1, learning-based congestion control[^4] has been proposed. They replace the rule-based congestion control algorithms with **deep reinforcement learning (DRL)** models. However, they still suffer from the second problem imposed by fixed **offline-learned** neuron network parameters. 
 
 Recent studies[^5][^6] investigate the paradigm of **online learning**. Specifically, they fine-tune the offline learned model online with transfer learning to adapt to unseen network conditions. Nevertheless, they require a large amount of data/time for transfer learning, which hinders fast adaptation to new network states. 
 
