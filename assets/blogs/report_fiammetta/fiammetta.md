@@ -6,7 +6,7 @@
 
 Maximizing **quality of experience (QoE)** for **interactive video streaming** has been a long-standing challenge, as its delay-sensitive nature makes it more vulnerable to **bandwidth fluctuations**. While **reinforcement learning (RL)** has demonstrated great potential, existing works are either limited by fixed models or require enormous data/time for online adaptation, which struggle to fit time-varying and diverse network states. 
 
-In this essay, I will introduce our project ***Fiammetta***, a **meta-reinforcement-learning (Meta-RL) based congestion control algorithm** that aims to tackle the above challenge. To begin with, we performed a large-scale measurement on the interactive video service of ***Tencent WeCom*** to study real-world network fluctuations. Surprisingly, our analysis shows that, compared to time-varying network metrics, **network statistics exhibit noticeable short-term continuity**, which offers opportunities for few-shot learning methods such as meta-learning. Building on short-term continuity, *Fiammetta* accumulates learning experiences through offline meta-training and enables fast online adaptation to changing network states through a few gradient updates. The results show that *Fiammetta* outperforms existing algorithms significantly, i**mproving video bitrate by 3.6%-16.2% without increasing stalling rate**. 
+In this essay, I will introduce our project ***Fiammetta***, a **meta-reinforcement-learning (Meta-RL) based congestion control algorithm** that aims to tackle the above challenge. To begin with, we performed a large-scale measurement on the interactive video service of ***Tencent WeCom*** to study real-world network fluctuations. Surprisingly, our analysis shows that, compared to time-varying network metrics, **network statistics exhibit noticeable short-term continuity**, which offers opportunities for few-shot learning methods such as meta-learning. Building on short-term continuity, *Fiammetta* accumulates learning experiences through offline meta-training and enables fast online adaptation to changing network states through a few gradient updates. The results show that *Fiammetta* outperforms existing algorithms significantly, improving video bitrate by **3.6%-16.2%** without increasing stalling rate. 
 
 The related [paper](https://waterhyacinthinnanhu.github.io/assets/pdf/Fiammetta.pdf) I co-authored: *"From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning"* will be published at **INFOCOM'23** in this May.
 
@@ -105,7 +105,7 @@ We name the continuations as *network states*, which is the basic unit of our ad
 
 In previous works[^5][^6], the policy directly outputs the absolute bitrate. However, through our experiments, this approach performs poorly given highly dynamic bandwidth due to the limited bitrate choices and large action space. In response, we let the policy output the **magnification**, i.e., $\frac{b_t}{b_{t-1}}$. The reasons are two-fold:
 
-1. While **Packet delay** and **delay jitter** are more informative for reflecting network link congestions than absolute throughput in policy's state space, they are closely correlated with the **relative changes** of sending rate $b$.
+1. While **Packet delay** and **delay jitter** are more informative for reflecting network link congestions than absolute throughput in policy's state space, they are **closely correlated with the relative changes of sending rate $b$.**
 2. Adopting magnification enables a more flexible control while **decreasing the dimension of action space**.
 
 #### 4.3.2 Policy Pretraining with Emulator
@@ -144,7 +144,7 @@ In this work, we considered a simplified scenario where *Fiammetta* operates alo
 
 ### 8.2 Computational Overhead
 
-In our framework, the computation of *Fiammetta* is offloaded to an RL server following the practice of previous works [^5]. However, our collaborators in Tencent suggested that a more efficient and mobile-friendly algorithm is preferred. A potential solution is integrating **low-cost rule-based algorithms with high-performance learning-based algorithms** [^7] . We may delve into it in our future works.
+In our framework, the computation of *Fiammetta* is offloaded to an RL server following the practice of previous works [^5]. However, our collaborators in Tencent suggested that a more efficient and mobile-friendly algorithm is preferred. A potential solution is **integrating low-cost rule-based algorithms with high-performance learning-based algorithms** [^7] . We may delve into it in our future works.
 
 ## References
 
