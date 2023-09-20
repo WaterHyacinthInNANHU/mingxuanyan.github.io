@@ -5,8 +5,8 @@
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Mingxuan
 middle_name:
-# last_name: Yan (阎明轩)
-last_name: Yan
+last_name: Yan (阎明轩)
+# last_name: Yan
 email: mingxuanyan99@outlook.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Mingxuan Yan
