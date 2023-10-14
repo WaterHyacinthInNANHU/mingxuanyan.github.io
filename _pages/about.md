@@ -36,5 +36,5 @@ You are welcome to reach me through [mingxuanyan99@outlook.com](mailto:mingxuany
 
 ### Research Interests
 
- - Video Delivery/Analytic System
  - Machine Learning System
+ - Video Delivery/Analytic System
