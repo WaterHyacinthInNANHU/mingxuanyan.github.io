@@ -36,6 +36,5 @@ You are welcome to reach me through [mingxuanyan99@outlook.com](mailto:mingxuany
 
 ### Research Interests
 
- - Video Delivery
- - Video Analytics
- - Deep Reinforcement Learning
+ - Machine Learning System
+ - Video Delivery/Analytic System
