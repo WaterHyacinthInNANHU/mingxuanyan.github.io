@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our work ''From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning'' has been accepted by **IEEE INFOCOM 2023**!🎉✨
+One paper ''From Ember to Blaze: Swift Interactive Video Adaptation via Meta-Reinforcement Learning'' has been accepted by **IEEE INFOCOM 2023**!🎉✨

@@ -30,11 +30,7 @@ social: true  # includes social icons at the bottom of the page
 
 ### About Me
 
-Hi there! I am Mingxuan Yan, a graduate student in the School of Electronic Information and Communications (EIC), [Huazhong University of Science and Technology](http://english.hust.edu.cn/) under the supervision of Prof.[Wei Wang](http://eic.hust.edu.cn/professor/wangwei/index.html). Before that, I obtained my bachelor's degree in [Wuhan University of Technology](http://english.whut.edu.cn/).
-
-You are welcome to reach me through [mingxuanyan99@outlook.com](mailto:mingxuanyan99@outlook.com)
+Hi there! I am Mingxuan Yan (pron: Ming-shwen Yen), a first-year PhD student at **[University of California - Riverside](https://www.ucr.edu/)**. I am currently a member of **[TASL](https://tasl.ucr.edu/)** under the supervision of **[Prof. Jiachen Li](https://jiachenli94.github.io/)**. Before that, I obtained my bachelor's degree at [Wuhan University of Technology](http://english.whut.edu.cn/), following a master's degree at [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
 
 ### Research Interests
-
- - Machine Learning System
- - Video Delivery/Analytic System
+ My major research interests now emphasis on causal machine learning (CasualML), which formalizes the data-generation process as a structural causal model to gain fine-grained control of machine learning algorithms. Previously, I conducted some researches on video compression & streaming for both human & machine perceptions.

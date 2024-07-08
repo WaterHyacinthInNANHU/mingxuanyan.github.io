@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our work ''Think before You Leap: Content-Aware Low-Cost Edge-Assisted Video Semantic Segmentation!'' has been accepted by **ACM Multimedia 2023**! 🎉✨
+One paper ''Think before You Leap: Content-Aware Low-Cost Edge-Assisted Video Semantic Segmentation!'' has been accepted by **ACM Multimedia 2023**! 🎉✨
